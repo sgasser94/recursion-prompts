@@ -41,10 +41,29 @@ var sum = function(array) {
 // 3. Sum all numbers in an array containing nested arrays.
 // arraySum([1,[2,3],[[4]],5]); // 15
 var arraySum = function(array) {
+  // i: nested arrays
+  // o: number
+  // base case: array is empty
+  // base case: array length is 1
+    // return the item in array
+  // recursive case: array length greater than 1
+    // iterate through the array
+      // set result = recursive call on item 
 };
 
 // 4. Check if a number is even.
 var isEven = function(n) {
+  var positiveN = Math.abs(n);
+
+  if (positiveN === 0) {
+    return true;
+  }
+  if (positiveN === 1) {
+    return false;
+  }
+  if (positiveN >= 2) {
+    return isEven(positiveN - 2);
+  }
 };
 
 // 5. Sum all integers below a given integer.
