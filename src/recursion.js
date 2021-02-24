@@ -150,7 +150,34 @@ var reverse = function(string) {
 
 // 10. Write a function that determines if a string is a palindrome.
 var palindrome = function(string) {
+  var normalizedString = string.toLowerCase();
+  var booleans = [];
+  var last = string.length - 1;
+  if (string.length === 1 || string.length === 0) {
+    return true;
+  }
+  if (normalizedString[0] === normalizedString[last]) {
+    return palindrome(normalizedString.slice(1, last));
+  }
+  return false;
 };
+
+// 23. Write a function that counts the number of times a value occurs in an object.
+// var obj = {'e':{'x':'y'},'t':{'r':{'e':'r'},'p':{'y':'r'}},'y':'e'};
+// countValuesInObj(obj, 'r') // 2
+// countValuesInObj(obj, 'e') // 1
+var countValuesInObj = function(obj, value) {
+};
+
+// 24. Find all keys in an object (and nested objects) by a provided name and rename
+// them to a provided new name while preserving the value stored at that key.
+var replaceKeysInObj = function(obj, oldKey, newKey) {
+};
+
+
+// ______________________________________________________________________________________________________________
+// ______________________________________________________________________________________________________________
+
 
 // 11. Write a function that returns the remainder of x divided by y without using the
 // modulo (%) operator.
@@ -224,18 +251,6 @@ var rMap = function(array, callback) {
 // countKeysInObj(obj, 'r') // 1
 // countKeysInObj(obj, 'e') // 2
 var countKeysInObj = function(obj, key) {
-};
-
-// 23. Write a function that counts the number of times a value occurs in an object.
-// var obj = {'e':{'x':'y'},'t':{'r':{'e':'r'},'p':{'y':'r'}},'y':'e'};
-// countValuesInObj(obj, 'r') // 2
-// countValuesInObj(obj, 'e') // 1
-var countValuesInObj = function(obj, value) {
-};
-
-// 24. Find all keys in an object (and nested objects) by a provided name and rename
-// them to a provided new name while preserving the value stored at that key.
-var replaceKeysInObj = function(obj, oldKey, newKey) {
 };
 
 // 25. Get the first n Fibonacci numbers. In the Fibonacci sequence, each subsequent
