@@ -113,20 +113,12 @@ var exponent = function(base, exp) {
     // exponent(5, -4) >> 0.0016
     // returns 0.00160000000000000000005
   // PASSES OTHER NEGATIVE EXPONENT TESTS
-
-  // base: exp = 0
-    // return base * 1
-  // recursive: exp > 0
-    // return base * exp(exp - 1)
-  // recursive: exp < 0
-    // return (1/base) * exp(exp + 1)
   if (exp === 0) return 1;
   if (exp > 0) {
     return base * exponent(base, exp - 1);
-  }
-  if (exp < 0) {
-    return (1 / base) * exponent(base, exp + 1);
-  }
+  } else {
+    return 1 / base * exponent(base, exp + 1);
+  }  
 };
 
 // 8. Determine if a number is a power of two.
