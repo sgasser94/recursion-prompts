@@ -110,8 +110,8 @@ var range = function(x, y) {
 // https://www.khanacademy.org/computing/computer-science/algorithms/recursive-algorithms/a/computing-powers-of-a-number
 var exponent = function(base, exp) {
   // THIS PASSES ALL TESTS EXCEPT FOR:
-    // exponent(5, -4) >> 0.0016
-    // returns 0.00160000000000000000005
+    // exponent(5, -4)     // 0.0016
+    // returns 0.0016000000000000005
   // PASSES OTHER NEGATIVE EXPONENT TESTS
   if (exp === 0) return 1;
   if (exp > 0) {
@@ -126,10 +126,26 @@ var exponent = function(base, exp) {
 // powerOfTwo(16); // true
 // powerOfTwo(10); // false
 var powerOfTwo = function(n) {
+  // input: number
+  // output: boolean
+  // base: n = 1
+    // return true
+  // base: n ^ 1 === 2
+    // return true
+  // recursive: n
 };
 
 // 9. Write a function that reverses a string.
 var reverse = function(string) {
+  var last = string.length - 1;
+  var result = '';
+  if (string.length === 0) {
+    return result;
+  }
+  if (string.length > 0) {
+    result += string[last] + reverse(string.slice(0, last));
+  }
+  return result;
 };
 
 // 10. Write a function that determines if a string is a palindrome.
