@@ -1,12 +1,31 @@
 /* jshint esversion: 6 */
 
 // Solve the following prompts using recursion.
-
+    /* Steps to solving recursion
+    1. identify the base case, and what data is associated with the base case
+    2. write function to handle this base case
+    3. identify what will make the function need to continue
+        a. what situation are we in, when we arent in the base case?
+        b. move toward the base case
+    4. make recursive call
+    5. accumulate the return
+        a. store the information you get from the recursive call
+    */
 // 1. Calculate the factorial of a number. The factorial of a non-negative integer n,
 // denoted by n!, is the product of all positive integers less than or equal to n.
 // Example: 5! = 5 x 4 x 3 x 2 x 1 = 120
 // factorial(5); // 120
 var factorial = function(n) {
+    if (n < 0) {
+      return null;
+    }
+    if (n === 0) {
+      return 1;
+    }
+    
+    if (n > 0) {
+      return n * factorial(n - 1);
+    }
 };
 
 // 2. Compute the sum of an array of integers.
