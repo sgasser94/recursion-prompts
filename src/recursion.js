@@ -41,14 +41,15 @@ var sum = function(array) {
 // 3. Sum all numbers in an array containing nested arrays.
 // arraySum([1,[2,3],[[4]],5]); // 15
 var arraySum = function(array) {
-  // i: nested arrays
-  // o: number
-  // base case: array is empty
-  // base case: array length is 1
-    // return the item in array
-  // recursive case: array length greater than 1
-    // iterate through the array
-      // set result = recursive call on item 
+  var sum = 0;
+  array.forEach(function(item) {
+    if (!Array.isArray(item)) {
+      sum += item;
+    } else {
+      sum += arraySum(item);
+    }
+  })
+  return sum;
 };
 
 // 4. Check if a number is even.
@@ -151,7 +152,6 @@ var reverse = function(string) {
 // 10. Write a function that determines if a string is a palindrome.
 var palindrome = function(string) {
   var normalizedString = string.toLowerCase();
-  var booleans = [];
   var last = string.length - 1;
   if (string.length === 1 || string.length === 0) {
     return true;
