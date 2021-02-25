@@ -129,11 +129,7 @@ var exponent = function(base, exp) {
 var powerOfTwo = function(n) {
   // input: number
   // output: boolean
-  // base: n = 1
-    // return true
-  // base: n ^ 1 === 2
-    // return true
-  // recursive: n
+  // base: 
 };
 
 // 9. Write a function that reverses a string.
@@ -167,6 +163,33 @@ var palindrome = function(string) {
 // countValuesInObj(obj, 'r') // 2
 // countValuesInObj(obj, 'e') // 1
 var countValuesInObj = function(obj, value) {
+  // input - object literal
+  // output - number
+  // base: value is a letter
+    // if it mathes value
+      // increment counter
+  // recurse: value is an object
+    // recurse
+  
+  // iterate through keys
+    // if value isnt an object
+      // if value = given value
+        // increment
+    // if value is an object
+      // return recurse(value)
+  // return counter
+  var counter = 0;
+  for (var key in obj) {
+    if (typeof obj[key] === 'object') {
+      counter += countValuesInObj(obj[key], value);
+    } else {
+      if (obj[key] === value) {
+        counter++;
+        return counter;
+      }
+    }
+  }
+  return counter;
 };
 
 // 24. Find all keys in an object (and nested objects) by a provided name and rename
