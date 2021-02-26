@@ -163,21 +163,6 @@ var palindrome = function(string) {
 // countValuesInObj(obj, 'r') // 2
 // countValuesInObj(obj, 'e') // 1
 var countValuesInObj = function(obj, value) {
-  // input - object literal
-  // output - number
-  // base: value is a letter
-    // if it mathes value
-      // increment counter
-  // recurse: value is an object
-    // recurse
-  
-  // iterate through keys
-    // if value isnt an object
-      // if value = given value
-        // increment
-    // if value is an object
-      // return recurse(value)
-  // return counter
   var counter = 0;
   for (var key in obj) {
     if (typeof obj[key] === 'object') {
@@ -195,8 +180,40 @@ var countValuesInObj = function(obj, value) {
 // 24. Find all keys in an object (and nested objects) by a provided name and rename
 // them to a provided new name while preserving the value stored at that key.
 var replaceKeysInObj = function(obj, oldKey, newKey) {
-};
+  // i - nested {}
+  // o - nested {} - diff key names
+  // c - 
+  // e - mutate input
 
+  // base: obj[key] is NOT an object
+  // recursive: obj[key] IS AN OBJECT
+  
+  // iterate through object
+    // if key is oldkey
+      // save value to variable
+      // create new property in obj with new key name and same value
+      // delete the old entry 
+      // return obj
+    // if the value at a given key is an object
+    //     {e:{x:'y'},t:{r:{e:'r'},p:{y:'r'}},y:'e'};
+
+  for (var key in obj) {
+    if (key === oldKey) {
+      var value = obj[key];
+      obj[newKey] = value;
+      delete obj[key];
+    }
+    if (typeof obj[key] === 'object') {
+      console.log(key, 'this is key'); // e t r p
+      console.log(obj, "this is obj");
+      obj[key] = replaceKeysInObj(obj[key], oldKey, newKey);
+
+    }
+  }
+  return obj;
+};
+var obj = {e:{x:'y'},t:{r:{e:'r'},p:{y:'r'}},y:'e'};
+console.log(replaceKeysInObj(obj, 'e', 'G'));
 
 // ______________________________________________________________________________________________________________
 // ______________________________________________________________________________________________________________
